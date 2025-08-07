@@ -1,1 +1,1 @@
-# dsa-apna-college
+this repo is for js practice.
