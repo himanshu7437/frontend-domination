@@ -12,13 +12,14 @@ html, body {
 .main {
     height: 100%;
     width: 100%;
-    background-color: aqua;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* background-color: aqua; */
 }
 
 .rect {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     height: 250px;
     width: 400px;
     background-color: red;
