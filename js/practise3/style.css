@@ -1,20 +1,46 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 html, body {
     height: 100%;
     width: 100%;
+    background: #0e0e0e;
+    overflow: hidden;
 }
 
-.rect {
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text {
+    font-size: 10vw;
+    font-weight: 900;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+}
+
+.imagediv {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: 400px;
-    width: 650px;
-    background-color: brown;
+    height: 180px;
+    width: 180px;
+    overflow: hidden;
+    border-radius: 20px;
+    pointer-events: none;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.imagediv img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
 }
