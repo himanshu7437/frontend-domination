@@ -1,3 +1,6 @@
+// question
+// create a custom crsr which follow the original crsr.
+
 var crsr = document.querySelector(".crsr");
 var maindiv = document.querySelector(".main");
 var logo = document.querySelector(".logo");
