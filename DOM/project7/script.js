@@ -3,21 +3,43 @@
 
 // note- onsubmit by default page reload due to which our js will not work so we have to prevent this using prevent default event. Also the submit event is on form tag.
 
+// ----- basic solution - but here we are selecting input one by one.
+
+// var form = document.querySelector('form')
+// var inp1 = document.querySelector('.inp1')
+// var inp2 = document.querySelector('.inp2')
+// var h3 = document.querySelector('h3')
+
+// form.addEventListener('submit', function(event) {
+//     event.preventDefault();
+
+//     if(inp1.value === '' || inp2.value === '') {
+//         h3.innerHTML = 'error, fields are blank';
+//         h3.style.color = 'red';
+
+//     } else {
+//         h3.innerHTML = 'form submitted';
+//         h3.style.color = 'black';
+//     }
+
+// })
+
+//  solution-2 selecting all at once.
+
 var form = document.querySelector('form')
-var inp1 = document.querySelector('.inp1')
-var inp2 = document.querySelector('.inp2')
+var inp = document.querySelectorAll('input[type="text"]')
 var h3 = document.querySelector('h3')
 
 form.addEventListener('submit', function(event) {
     event.preventDefault();
-
-    if(inp1.value === '' || inp2.value === '') {
-        h3.innerHTML = 'error, fields are blank';
-        h3.style.color = 'red';
-
-    } else {
-        h3.innerHTML = 'form submitted';
-        h3.style.color = 'black';
+    for (let index = 0; index < inp.length; index++) {
+        if(inp[index].value === ''){
+            h3.innerHTML = 'error, fields are blank';
+            h3.style.color = 'red';
+        } else {
+            h3.innerHTML = 'form submitted';
+            h3.style.color = 'black';
+        }
+        
     }
-
 })
