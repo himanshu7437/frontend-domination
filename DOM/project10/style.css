@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    /* background-color: indianred; */
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.left {
+    background-color: crimson;
+    width: 20vw;
+}
+
+.right {
+    background-color: coral;
+    width: 80vw;
+}
+
+
+.tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.tab {
+    height: 50px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.first {
+    margin-top: 50px;
+}

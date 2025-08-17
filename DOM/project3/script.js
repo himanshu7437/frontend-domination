@@ -1,3 +1,6 @@
+// question 
+// create a instagram like effect of heart on a image
+
 var container = document.querySelector("#container");
 var love = document.querySelector("i");
 
