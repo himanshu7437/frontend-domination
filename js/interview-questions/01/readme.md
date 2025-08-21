@@ -335,7 +335,6 @@ rabbit.jump(); // from Rabbit
 
 ---
 
-Perfect 👌 let’s make this **super clear and interview-ready**.
 
 ---
 
@@ -405,4 +404,363 @@ console.log("Task 3");
 
 ---
 
+---
 
+# 🔑 Ques -6) Hoisting in JavaScript
+
+---
+
+## 1️⃣ Easy Explanation
+
+👉 **Hoisting** means:
+JavaScript moves **declarations** (not initializations) **to the top of their scope** before execution.
+
+* **Function declarations** are fully hoisted → you can call them before they are defined.
+* **`var` variables** are hoisted but initialized with `undefined`.
+* **`let` and `const` variables** are also hoisted, but they stay in a **“temporal dead zone” (TDZ)** until their line is reached → using them before declaration causes an **error**.
+
+---
+
+## 2️⃣ Code Examples
+
+### 🟢 Function Hoisting
+
+```js
+sayHello(); // ✅ Works
+
+function sayHello() {
+  console.log("Hello!");
+}
+```
+
+---
+
+### 🟡 Var Hoisting
+
+```js
+console.log(a); // ✅ undefined (hoisted but not assigned)
+var a = 10;
+```
+
+---
+
+### 🔴 Let/Const Hoisting
+
+```js
+console.log(b); // ❌ ReferenceError (TDZ)
+let b = 20;
+```
+
+---
+
+## 3️⃣ Interview Answer (Crisp)
+
+“Hoisting is JavaScript’s default behavior of moving **declarations** to the top of their scope before execution. Functions are fully hoisted, `var` is hoisted but initialized as `undefined`, and `let`/`const` are hoisted but remain in the temporal dead zone until defined.”
+
+---
+
+## 4️⃣ One-liner
+
+👉 “Declarations are hoisted, but initializations are not.”
+
+---
+---
+
+# 🔑 Ques - 7) Different Ways of Creating Objects in JavaScript
+
+---
+
+## 1️⃣ Object Literal (most common & simplest)
+
+```js
+const person = {
+  name: "Rahul",
+  age: 22,
+  greet: function() {
+    console.log("Hello!");
+  }
+};
+```
+
+## ✅ Best when you need a simple object.
+
+## 2️⃣ Using `new Object()` (constructor)
+
+```js
+const car = new Object();
+car.brand = "Tesla";
+car.model = "Model S";
+```
+
+## ⚠️ Less common, same as object literal but longer.
+
+## 3️⃣ Constructor Function
+
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+const p1 = new Person("Rahul", 22);
+```
+
+## ✅ Used for creating **multiple similar objects** before ES6 classes.
+
+## 4️⃣ ES6 Class
+
+```js
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+const p2 = new Person("Rahul", 22);
+```
+
+## ✅ Cleaner & modern way → preferred in today’s development.
+
+## 5️⃣ `Object.create()` (prototype-based)
+
+```js
+const proto = {
+  greet() {
+    console.log("Hello!");
+  }
+};
+
+const student = Object.create(proto);
+student.name = "Rahul";
+```
+
+## ✅ Useful when you want to create an object with a specific **prototype**.
+
+## 6️⃣ Factory Function
+
+```js
+function createUser(name, age) {
+  return {
+    name,
+    age,
+    greet() {
+      console.log(`Hi, I’m ${name}`);
+    }
+  };
+}
+
+const user = createUser("Rahul", 22);
+```
+
+## ✅ Similar to constructor but **doesn’t use `new`**.
+
+# 🎯 Interview-Friendly Answer
+
+“There are several ways to create objects in JavaScript:
+
+* **Object literal** (most common),
+* **`new Object()`**,
+* **Constructor functions**,
+* **ES6 Classes**,
+* **`Object.create()`** for prototype inheritance, and
+* **Factory functions**.
+
+In real-world apps, object literals and classes are most commonly used.”
+
+---
+
+---
+
+# 🔑Ques - 8) `this` in JavaScript
+
+👉 **Definition (Interview Friendly):**
+`this` refers to the **object that is currently calling/executing the function**.
+Its value depends on **how** (not where) the function is called.
+
+---
+
+## 1️⃣ In the Global Context
+
+```js
+console.log(this);
+```
+
+* In **browser** → `this` points to the `window` object.
+* In **strict mode** → `this` is `undefined`.
+
+---
+
+## 2️⃣ Inside an Object Method
+
+```js
+const person = {
+  name: "Rahul",
+  greet: function() {
+    console.log(this.name);
+  }
+};
+person.greet(); // Rahul
+```
+
+👉 Here `this` refers to the object (`person`) that calls the method.
+
+---
+
+## 3️⃣ Alone in a Function
+
+```js
+function show() {
+  console.log(this);
+}
+show(); // window (or undefined in strict mode)
+```
+
+---
+
+## 4️⃣ With `new` (Constructor Function or Class)
+
+```js
+function Person(name) {
+  this.name = name;
+}
+const p1 = new Person("Rahul");
+console.log(p1.name); // Rahul
+```
+
+👉 Inside a constructor/class, `this` refers to the **newly created object**.
+
+---
+
+## 5️⃣ In Arrow Functions 🚀
+
+```js
+const person = {
+  name: "Rahul",
+  greet: () => {
+    console.log(this.name);
+  }
+};
+person.greet(); // undefined (or window.name)
+```
+
+👉 Arrow functions **don’t have their own `this`**.
+They use `this` from the **surrounding lexical scope**.
+
+---
+
+## 6️⃣ With `call`, `apply`, `bind`
+
+```js
+function greet(city) {
+  console.log(`Hi I am ${this.name} from ${city}`);
+}
+const user = { name: "Rahul" };
+
+greet.call(user, "Delhi");   // Hi I am Rahul from Delhi
+greet.apply(user, ["Mumbai"]); // Hi I am Rahul from Mumbai
+const bound = greet.bind(user, "Bangalore");
+bound(); // Hi I am Rahul from Bangalore
+```
+
+👉 These methods **explicitly set** `this`.
+
+---
+
+# 🎯 Interview Answer (Simple & Clear)
+
+“In JavaScript, `this` refers to the object that is executing the function.
+Its value depends on how the function is called:
+
+* In global → `window` (or `undefined` in strict mode).
+* Inside object methods → that object.
+* In constructors/classes → the new object created.
+* Arrow functions → don’t have their own `this`, they use the parent scope’s `this`.
+  We can also manually set `this` using `call`, `apply`, or `bind`.”
+
+---
+---
+
+# 🔑 Ques - 9) Promises in JavaScript
+
+👉 **Definition (Interview Friendly):**
+A **Promise** is an object that represents the eventual **completion or failure** of an asynchronous operation.
+It helps us handle async code in a **cleaner and more readable** way than callbacks.
+
+---
+
+## 1️⃣ States of a Promise
+
+A Promise can be in **three states**:
+
+1. **Pending** → initial state, neither fulfilled nor rejected.
+2. **Fulfilled** → operation completed successfully.
+3. **Rejected** → operation failed.
+
+---
+
+## 2️⃣ Example
+
+```js
+const myPromise = new Promise((resolve, reject) => {
+  let success = true;
+
+  if (success) {
+    resolve("✅ Task completed!");
+  } else {
+    reject("❌ Task failed!");
+  }
+});
+
+myPromise
+  .then(result => console.log(result)) // when resolved
+  .catch(error => console.log(error)) // when rejected
+  .finally(() => console.log("Done"));
+```
+
+---
+
+# 🔄 Callbacks vs Promises
+
+| Feature            | Callbacks                             | Promises                              |
+| ------------------ | ------------------------------------- | ------------------------------------- |
+| **Definition**     | Function passed into another function | Object that represents a future value |
+| **Readability**    | Callback hell (nested) 😵             | Cleaner `.then().catch()` chain ✅     |
+| **Error Handling** | Must handle manually in each callback | Built-in `.catch()` for errors ✅      |
+| **Chaining**       | Hard to chain multiple async ops      | Easy chaining with `.then()` ✅        |
+| **Control Flow**   | Can get messy in large apps           | More predictable & structured         |
+
+---
+
+## Example: Callback vs Promise
+
+### ❌ Callback Hell
+
+```js
+doTask1(() => {
+  doTask2(() => {
+    doTask3(() => {
+      console.log("All done!");
+    });
+  });
+});
+```
+
+### ✅ Promise Chain
+
+```js
+doTask1()
+  .then(doTask2)
+  .then(doTask3)
+  .then(() => console.log("All done!"))
+  .catch(err => console.log(err));
+```
+
+---
+
+# 🎯 Interview Answer (Simple & Clear)
+
+“In JavaScript, **promises** are used to handle asynchronous operations in a cleaner way.
+They represent a value that will be available **now, later, or never**.
+Unlike callbacks that often lead to **callback hell**, promises allow us to write async code in a structured way with `.then`, `.catch`, and `.finally`.
+Error handling and chaining are also much easier with promises.”
+
+---
