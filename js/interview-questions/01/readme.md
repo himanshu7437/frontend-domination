@@ -764,3 +764,76 @@ Unlike callbacks that often lead to **callback hell**, promises allow us to writ
 Error handling and chaining are also much easier with promises.”
 
 ---
+
+---
+
+# 🔄 Ques - 10) Event Loop in JavaScript
+
+👉 **Definition (Interview friendly):**
+The **event loop** is a mechanism in JavaScript that allows it to perform **non-blocking asynchronous operations** despite being **single-threaded**.
+It continuously checks the **Call Stack** and the **Callback Queue / Microtask Queue** to decide what to execute next.
+
+---
+
+## 1️⃣ How JS executes code
+
+* JavaScript is **single-threaded** → it has **one Call Stack**.
+* To handle async tasks (like `setTimeout`, promises, fetch etc.), the **Web APIs** & **Queues** come into play.
+
+---
+
+## 2️⃣ Flow of Event Loop
+
+1. JS runs code line by line in the **Call Stack**.
+2. If it finds async code (e.g., `setTimeout`), that code is given to **Web APIs**.
+3. When async work is done, the callback/promise is moved to:
+
+   * **Callback Queue** → e.g., `setTimeout`, DOM events.
+   * **Microtask Queue** → e.g., Promises, `queueMicrotask`.
+4. The **event loop** keeps checking:
+
+   * If Call Stack is empty → take from **Microtask Queue first**.
+   * If Microtask Queue is empty → take from **Callback Queue**.
+5. This cycle keeps running → That’s the **Event Loop**.
+
+---
+
+## 3️⃣ Example
+
+```js
+console.log("Start");
+
+setTimeout(() => console.log("Timeout"), 0);
+
+Promise.resolve().then(() => console.log("Promise"));
+
+console.log("End");
+```
+
+### Output:
+
+```
+Start
+End
+Promise
+Timeout
+```
+
+👉 Why?
+
+* `console.log("Start")` → sync → runs immediately.
+* `setTimeout(...,0)` → async → goes to **Callback Queue**.
+* `Promise.resolve().then(...)` → async → goes to **Microtask Queue**.
+* `console.log("End")` → sync → runs.
+* Event Loop sees Call Stack empty → runs **Microtask Queue first** → `"Promise"`.
+* Then runs **Callback Queue** → `"Timeout"`.
+
+---
+
+# 🎯 Interview Answer (Crisp)
+
+“JavaScript is single-threaded, so it uses the **event loop** to handle asynchronous code.
+The event loop keeps checking the **call stack** and processes tasks from the **microtask queue (promises)** first, and then from the **callback queue (like setTimeout)**.
+This allows JavaScript to perform non-blocking operations efficiently.”
+
+---
