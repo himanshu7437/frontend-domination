@@ -837,3 +837,95 @@ The event loop keeps checking the **call stack** and processes tasks from the **
 This allows JavaScript to perform non-blocking operations efficiently.”
 
 ---
+
+---
+
+# 🚀 Ques 11) Strategies to Improve JavaScript Performance
+
+### 1️⃣ Minimize DOM Manipulations
+
+* **Why?** Direct DOM changes are slow.
+* **How?**
+
+  * Batch DOM updates (use `documentFragment`, or update all at once).
+  * Use `innerHTML` instead of multiple `.appendChild()` calls.
+  * Cache DOM selectors instead of calling `document.querySelector` repeatedly.
+
+---
+
+### 2️⃣ Use Debouncing & Throttling
+
+* **Why?** Avoid running heavy functions on every event (like scroll, resize, keypress).
+* **How?**
+
+  * **Debounce:** Execute after a delay (good for search input).
+  * **Throttle:** Limit function calls per interval (good for scroll events).
+
+---
+
+### 3️⃣ Optimize Loops & Functions
+
+* Avoid nested loops if possible.
+* Use modern methods like `.map()`, `.filter()`, `.reduce()` (but also know they create new arrays).
+* Keep functions **pure** and **small**.
+
+---
+
+### 4️⃣ Use Asynchronous Programming
+
+* Offload long-running tasks with **Promises / async-await**.
+* Use **Web Workers** for heavy computations so the UI doesn’t freeze.
+
+---
+
+### 5️⃣ Lazy Loading & Code Splitting
+
+* Load only what’s needed:
+
+  * Lazy load images.
+  * Split JavaScript bundles so the browser doesn’t load everything at once.
+
+---
+
+### 6️⃣ Minify & Compress
+
+* Minify JS, CSS (remove whitespaces, shorten names).
+* Use Gzip or Brotli compression on the server.
+
+---
+
+### 7️⃣ Cache Smartly
+
+* Use **localStorage/sessionStorage** or IndexedDB for caching data.
+* Cache API responses (e.g., with Service Workers).
+
+---
+
+### 8️⃣ Avoid Memory Leaks
+
+* Remove event listeners when not needed.
+* Nullify references to unused objects.
+
+---
+
+### 9️⃣ Use Efficient Data Structures
+
+* Use Maps/Sets for lookups instead of arrays when dealing with large data.
+
+---
+
+### 🔟 Use Modern JS Features
+
+* Use `const` & `let` (better scoping).
+* Use ES6+ features like `async/await` for cleaner async handling.
+
+---
+
+# 🎯 Crisp Interview Answer:
+
+“To improve JavaScript performance, I would minimize DOM manipulations, use techniques like **debouncing/throttling** for event handling, apply **lazy loading and code splitting**, and optimize loops and functions.
+I’d also leverage **caching, asynchronous programming, and modern JS features**, while ensuring memory leaks are avoided.
+Overall, the idea is to reduce unnecessary work and make the browser handle tasks more efficiently.”
+
+---
+
