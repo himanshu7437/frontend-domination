@@ -928,4 +928,69 @@ I’d also leverage **caching, asynchronous programming, and modern JS features*
 Overall, the idea is to reduce unnecessary work and make the browser handle tasks more efficiently.”
 
 ---
+---
 
+# 🔑 Ques - 12) `var`, `let`, and `const` in JavaScript
+
+### 1️⃣ **var**
+
+* **Scope** → Function-scoped (visible inside the whole function).
+* **Hoisting** → Hoisted to the top but **initialized as `undefined`**.
+* **Re-declaration** → Allowed. we can redeclare the var with the same name, it will override the value of previous one.
+* **Example:**
+
+  ```js
+  function test() {
+    console.log(a); // undefined (hoisted)
+    var a = 10;
+    console.log(a); // 10
+  }
+  test();
+  ```
+
+---
+
+### 2️⃣ **let**
+
+* **Scope** → Block-scoped (only inside `{}` where it’s declared).
+* **Hoisting** → Hoisted but in **Temporal Dead Zone** (can’t access before declaration).
+* **Re-declaration** → ❌ Not allowed in the same scope.
+* **Example:**
+
+  ```js
+  {
+    let x = 20;
+    console.log(x); // 20
+  }
+  // console.log(x); // ❌ Error (not accessible outside block)
+  ```
+
+---
+
+### 3️⃣ **const**
+
+* **Scope** → Block-scoped (same as `let`).
+* **Hoisting** → Hoisted but also in **Temporal Dead Zone**.
+* **Re-declaration** → ❌ Not allowed.
+* **Re-assignment** → ❌ Not allowed.
+* **BUT:** Objects/arrays inside `const` can be **modified**.
+* **Example:**
+
+  ```js
+  const y = 30;
+  // y = 40; ❌ Error (can’t reassign)
+
+  const arr = [1, 2, 3];
+  arr.push(4); // ✅ Allowed
+  console.log(arr); // [1, 2, 3, 4]
+  ```
+
+---
+
+# 🎯 Crisp Interview Answer:
+
+* **`var`** is function-scoped, hoisted, and can be re-declared.
+* **`let`** is block-scoped, hoisted but in a temporal dead zone, and cannot be re-declared.
+* **`const`** is also block-scoped, but variables cannot be re-assigned. However, objects and arrays declared with `const` can still be mutated.
+
+---
