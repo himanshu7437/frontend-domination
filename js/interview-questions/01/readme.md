@@ -994,3 +994,52 @@ Overall, the idea is to reduce unnecessary work and make the browser handle task
 * **`const`** is also block-scoped, but variables cannot be re-assigned. However, objects and arrays declared with `const` can still be mutated.
 
 ---
+
+---
+# Ques - 13) double equals to and triple equals to?
+## ✅ Double Equal `==`
+
+* **Checks only value**, **ignores type** (does type conversion automatically).
+* This is called **type coercion**.
+
+Example:
+
+```js
+console.log(5 == '5');   // true ✅ (value same, type ignored)
+console.log(0 == false); // true ✅ (0 is falsy)
+console.log(null == undefined); // true ✅
+```
+
+---
+
+## ✅ Triple Equal `===`
+
+* **Checks both value AND type**.
+* No type conversion.
+
+Example:
+
+```js
+console.log(5 === '5');   // false ❌ (number vs string)
+console.log(0 === false); // false ❌ (number vs boolean)
+console.log(5 === 5);     // true ✅ (same value, same type)
+```
+
+---
+
+## 🎯 Interview Answer:
+
+👉 "`==` compares values but does type conversion if types are different.
+👉 `===` compares both value and type without conversion, so it’s safer and recommended."
+
+---
+
+⚡ Quick Example you can give in interview:
+
+```js
+"5" == 5   // true
+"5" === 5  // false
+```
+
+---
+
