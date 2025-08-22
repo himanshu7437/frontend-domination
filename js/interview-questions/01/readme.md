@@ -1361,4 +1361,101 @@ Understanding this helps us control which element handles the event first.”*
 * Bubbling = **Child reacts first**, then passes the message up to parents.
 
 ---
+---
 
+# ✅ Ques - 18) Callbacks in JavaScript
+
+### 🔹 What is a Callback?
+
+A **callback** is simply a function passed as an argument to another function,
+and it is **executed later**, usually after some task is completed.
+
+👉 In short:
+
+> “A callback is a function that gets called back at a later time.”
+
+---
+
+### 🔹 Example (Basic)
+
+```js
+function greet(name, callback) {
+  console.log("Hello, " + name);
+  callback(); // calling the function passed
+}
+
+function sayBye() {
+  console.log("Goodbye!");
+}
+
+greet("Rahul", sayBye);
+```
+
+**Output:**
+
+```
+Hello, Rahul
+Goodbye!
+```
+
+Here, `sayBye` is a **callback function**.
+
+---
+
+### 🔹 Example (Real-life Async Use)
+
+```js
+console.log("Start");
+
+setTimeout(function() {
+  console.log("Data fetched!");
+}, 2000);
+
+console.log("End");
+```
+
+**Output:**
+
+```
+Start
+End
+Data fetched!   // after 2 seconds
+```
+
+👉 The function inside `setTimeout` is a **callback**, executed later.
+
+---
+
+### 🎯 Interview Style Answer:
+
+*"A callback in JavaScript is a function passed into another function as an argument, which is executed later.
+Callbacks are commonly used in asynchronous tasks like reading files, making API requests, or timers.
+They allow us to run some code only after an operation is completed."*
+
+---
+
+### 🔹 Problem with Callbacks → "Callback Hell"
+
+When callbacks are nested too deeply, code becomes hard to read:
+
+```js
+getUser(function(user) {
+  getPosts(user.id, function(posts) {
+    getComments(posts[0].id, function(comments) {
+      console.log(comments);
+    });
+  });
+});
+```
+
+👉 That’s why **Promises** and **async/await** were introduced — to make code cleaner.
+
+---
+
+💡 **Easy way to explain in interviews:**
+
+* Callbacks = pass a function to another function.
+* Useful for async operations.
+* But too many callbacks → messy → solved by Promises/async-await.
+
+---
