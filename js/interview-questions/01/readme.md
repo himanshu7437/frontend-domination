@@ -1133,3 +1133,75 @@ getData();
 👉 *"In JavaScript, we handle errors using `try...catch...finally` for synchronous code, and `.catch()` or `try...catch` inside async/await for asynchronous code. We can also throw custom errors using `throw`. This prevents the application from crashing and allows graceful handling."*
 
 ---
+---
+
+#  Ques - 15)  `call`, `apply`, and `bind` in JavaScript
+
+All three are used to **control the value of `this`** when calling a function.
+
+---
+
+### 1. **`call()`**
+
+👉 Immediately calls the function with a given `this` value and arguments **separately**.
+
+```js
+function greet(city, country) {
+    console.log(`Hello, my name is ${this.name}, I live in ${city}, ${country}`);
+}
+
+const person = { name: "Rahul" };
+
+greet.call(person, "Delhi", "India");
+```
+
+📌 Output:
+`Hello, my name is Rahul, I live in Delhi, India`
+
+---
+
+### 2. **`apply()`**
+
+👉 Same as `call()`, but arguments are passed as an **array**.
+
+```js
+greet.apply(person, ["Mumbai", "India"]);
+```
+
+📌 Output:
+`Hello, my name is Rahul, I live in Mumbai, India`
+
+---
+
+### 3. **`bind()`**
+
+👉 Does **not call immediately**. Instead, it returns a **new function** with `this` bound permanently.
+
+```js
+const newGreet = greet.bind(person, "Bangalore", "India");
+newGreet();   // Call later
+```
+
+📌 Output:
+`Hello, my name is Rahul, I live in Bangalore, India`
+
+---
+
+## 🎯 Easy Interview Answer:
+
+👉 \*"`call`, `apply`, and `bind` are used to set the `this` context of a function.
+
+* `call` invokes the function immediately with arguments passed one by one.
+* `apply` is the same but takes arguments as an array.
+* `bind` returns a new function with `this` fixed, which can be called later."\*
+
+---
+
+💡 **Analogy to remember:**
+
+* `call` → Call me now 📞 (separate arguments)
+* `apply` → Apply as a form 📝 (arguments in an array)
+* `bind` → Bind for later ⏳ (new function to call later)
+
+---
+
