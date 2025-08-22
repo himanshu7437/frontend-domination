@@ -1042,4 +1042,94 @@ console.log(5 === 5);     // true ✅ (same value, same type)
 ```
 
 ---
+---
 
+# ✅ Ques - 14) How to Handle Errors in JavaScript
+
+### 1. **Using `try...catch`**
+
+* Used to catch runtime errors so the app doesn’t crash.
+
+```js
+try {
+    let result = 10 / x;  // ❌ x is not defined
+    console.log(result);
+} catch (error) {
+    console.error("Something went wrong:", error.message);
+}
+```
+
+👉 **Interview point:** `"try...catch" prevents the script from breaking when an error occurs.`
+
+---
+
+### 2. **Using `throw`**
+
+* You can create **custom errors**.
+
+```js
+function divide(a, b) {
+    if (b === 0) {
+        throw new Error("Cannot divide by zero");
+    }
+    return a / b;
+}
+
+try {
+    console.log(divide(10, 0));
+} catch (err) {
+    console.error(err.message);
+}
+```
+
+---
+
+### 3. **Using `finally`**
+
+* Runs **always**, whether there’s an error or not (used for cleanup).
+
+```js
+try {
+    console.log("Trying...");
+    throw new Error("Oops!");
+} catch (err) {
+    console.log("Caught:", err.message);
+} finally {
+    console.log("This will always run ✅");
+}
+```
+
+---
+
+### 4. **Handling Errors in Promises**
+
+```js
+fetch("wrong-url")
+    .then(res => res.json())
+    .catch(err => console.error("Fetch error:", err));
+```
+
+---
+
+### 5. **Handling Errors in Async/Await**
+
+```js
+async function getData() {
+    try {
+        let res = await fetch("wrong-url");
+        let data = await res.json();
+        console.log(data);
+    } catch (err) {
+        console.error("Async error:", err.message);
+    }
+}
+getData();
+```
+
+---
+
+## 🎯 Interview Answer (short & clear):
+
+👉 *"In JavaScript, we handle errors using `try...catch...finally` for synchronous code, and `.catch()` or `try...catch` inside async/await for asynchronous code. We can also throw custom errors using `throw`. This prevents the application from crashing and allows graceful handling."*
+
+---
