@@ -1204,4 +1204,78 @@ newGreet();   // Call later
 * `bind` → Bind for later ⏳ (new function to call later)
 
 ---
+---
+
+# ✅ Ques - 16) `filter`, `map`, `reduce` in JavaScript
+
+These are **higher-order functions** on arrays.
+They **do not change the original array**, instead return a new one (except reduce, which returns a single value).
+
+---
+
+### 1. **`filter()`**
+
+👉 Used to **filter out** elements based on a condition. Returns a **new array**.
+
+```js
+const numbers = [1, 2, 3, 4, 5, 6];
+
+// Get only even numbers
+const evens = numbers.filter(num => num % 2 === 0);
+
+console.log(evens); // [2, 4, 6]
+```
+
+---
+
+### 2. **`map()`**
+
+👉 Used to **transform** each element. Returns a **new array** of the same length.
+
+```js
+// Square each number
+const squares = numbers.map(num => num * num);
+
+console.log(squares); // [1, 4, 9, 16, 25, 36]
+```
+
+---
+
+### 3. **`reduce()`**
+
+👉 Used to **reduce** the array into a **single value** (sum, product, max, etc).
+
+```js
+// Sum of all numbers
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+
+console.log(sum); // 21
+```
+
+📌 Parameters in `reduce`:
+
+* `acc` → accumulator (stores result)
+* `num` → current element
+* `0` → initial value of accumulator
+
+---
+
+## 🎯 Easy Interview Answer:
+
+\*"`filter`, `map`, and `reduce` are functional programming methods in JavaScript:
+
+* `filter` → selects elements that satisfy a condition,
+* `map` → transforms each element,
+* `reduce` → reduces the array to a single value.
+  They make code shorter, cleaner, and avoid manual loops."\*
+
+---
+
+💡 **Analogy to remember:**
+
+* `filter` → Pick only what you need (like filtering spam emails).
+* `map` → Transform things (like changing all names to uppercase).
+* `reduce` → Summarize everything (like getting total expenses).
+
+---
 
