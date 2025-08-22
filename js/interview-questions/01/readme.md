@@ -1278,4 +1278,87 @@ console.log(sum); // 21
 * `reduce` → Summarize everything (like getting total expenses).
 
 ---
+---
+
+# ✅ Ques - 17) Event Bubbling & Event Capturing in JavaScript
+
+Whenever you click (or trigger an event) on an element, the event doesn’t just stay there —
+it travels through the DOM tree in **phases**.
+
+---
+
+### 🔹 Phases of Event Flow:
+
+1. **Capturing Phase (Event Capturing / Trickle Down)**
+   Event goes **from the root (`window`/`document`) → down to the target element**.
+
+2. **Target Phase**
+   Event reaches the actual target element you clicked.
+
+3. **Bubbling Phase (Event Bubbling / Bubble Up)**
+   Event goes **from the target element → back up to the root**.
+
+---
+
+### 🔹 Example:
+
+```html
+<div id="parent">
+  <button id="child">Click Me</button>
+</div>
+```
+
+```js
+document.getElementById("parent").addEventListener("click", () => {
+  console.log("Parent clicked");
+}, false); // bubbling phase (default)
+
+document.getElementById("child").addEventListener("click", () => {
+  console.log("Child clicked");
+}, false);
+```
+
+👉 If you click the **button**, output:
+
+```
+Child clicked
+Parent clicked
+```
+
+(because bubbling → child first, then parent)
+
+---
+
+### 🔹 Capturing Example:
+
+```js
+document.getElementById("parent").addEventListener("click", () => {
+  console.log("Parent clicked (capturing)");
+}, true); // true → capturing phase
+```
+
+👉 Now if you click the button, output:
+
+```
+Parent clicked (capturing)
+Child clicked
+```
+
+---
+
+### 🎯 Easy Interview Answer:
+
+*“Event bubbling means the event goes from the target element up through its ancestors.
+Event capturing means the event goes from the root down to the target.
+By default, JavaScript uses bubbling, but we can enable capturing by passing `true` in `addEventListener`.
+Understanding this helps us control which element handles the event first.”*
+
+---
+
+💡 **Analogy to remember:**
+
+* Capturing = **Parents check first** (“Is someone clicking my kid?”).
+* Bubbling = **Child reacts first**, then passes the message up to parents.
+
+---
 
