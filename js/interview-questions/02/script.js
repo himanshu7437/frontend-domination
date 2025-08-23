@@ -290,3 +290,14 @@
 // console.log(a); 
 
 // ------------------- functions ---------------------
+
+// 1. write a functions to check if a number is even or odd.
+// 2. create a functions to calculate the area of a circle with a given radius.
+// 3. write a functions that accepts an array and returns the sum of its elements
+// 4. create a functions that checks if a string start with a specific chaaracter.
+// 5. write a function to find the maximum of two numbers.
+// 6. create a function that takes a number and reeturn its factorial.
+// 7. write a function that accepts a string and returns its reverse.
+// 8. create a functions to find the largest number in an array.
+// 9. write a function that converts a string to kebab-case eg. "Hello World" - hello-world
+// 10. create a function that logs: "hello world!!" everytime it is called.
