@@ -57,3 +57,14 @@
 
 
 // -------------------  variable and datatypes ---------------------
+
+// 1. diplay a varialble using let and log its value
+// 2. creare a const pi and log
+// 3. reassign a value to a variable declared with let and log the result
+// 4. check the type of null and its object.
+// 5. create a variable with a no. as a string "20" and check its type.
+// 6. use type of and check the type of boolean
+// 7. create three variable of types string, number, and boolean and log their values.
+// 8. declare a variable without assigning a value and log its type. 
+// 9. create a variable with undefined and log its type.
+// 10. use const to create an array. try reassigning the array and observe.
