@@ -209,3 +209,16 @@
 // }
 
 
+// ------------------- Arrays ---------------------
+
+// 1. create an array of your top 5 favourite movies and log it.
+// 2. find and log the second element of an array. 
+// 3. add two new elements to the start of an array using unshift().
+// 4. remove the last element of the array and log the updated arrray.
+// 5. use slice to extract the first three element of the array 
+// 6. find the index of a specific element in a array using .indexof()
+// 7. check if a value exists in an array using .includes().
+// 8. combine two arrays [1,2] and [3,4] using .concat().
+// 9. sort an array of numbers in [5, 2, 9, 1] in ascending order.
+// 10. write a program that creeates a copy of an araay without mutating the original.
+
