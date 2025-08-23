@@ -110,3 +110,17 @@
 
 // const a = [1, 2, 3];
 // a = [2, 3, 4]; // error - assignment to constant variable
+
+
+// ------------------- Loops ---------------------
+
+// 1. write a for loop to print numbers from 1 to 50.
+// 2. use a while loop to sum the numbers from 1 to 50.
+// 3. create a for....of loop to log each character of the string "javascript".
+// 4. write a for loop that print only even no. between 1 to 20. 
+// 5. use a do....while loop to log numbers from 5 to 1.
+// 6. create a for loop that calculates the factorial of 5.
+// 7. use for loop to reverse an array [1, 2, 3, 4].
+// 8. write a nested loop to print an 3 * 3 grid of numbers.
+// 9. write a while loop that logs numbers from 1 to 100 divisible by 5.
+// 10. use a for...in loop tp iterate over an oobject and log its keys.
