@@ -196,14 +196,16 @@
 
 // 10. use a for...in loop tp iterate over an oobject and log its keys.
 
-var a = {
-    name: "himanshu",
-    age: 21,
-    college: "vaish college of engineering",
-    indian: true,
-}
+// var a = {
+//     name: "himanshu",
+//     age: 21,
+//     college: "vaish college of engineering",
+//     indian: true,
+// }
 
-for (const key in a) {
-    console.log(`${key} -> ${a[key]}`);
+// for (const key in a) {
+//     console.log(`${key} -> ${a[key]}`);
     
-}
+// }
+
+
