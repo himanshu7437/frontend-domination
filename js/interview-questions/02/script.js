@@ -115,12 +115,95 @@
 // ------------------- Loops ---------------------
 
 // 1. write a for loop to print numbers from 1 to 50.
+
+// for (let i = 1; i <= 50; i++) {
+//     console.log(i);
+// }
+
 // 2. use a while loop to sum the numbers from 1 to 50.
+
+// var sum = 0;
+// var num = 0;
+
+// while(num <=50) {
+//     sum+=num;
+//     num++;
+// }
+// console.log(sum);
+
 // 3. create a for....of loop to log each character of the string "javascript".
+
+// var str = "javascript";
+
+// for (var element of str) {
+//     console.log(element); 
+// }
+
 // 4. write a for loop that print only even no. between 1 to 20. 
+
+// for(let i = 1; i <= 20; i++) {
+//     if(i%2==0) {
+//         console.log(i);       
+//     }
+// }
+
 // 5. use a do....while loop to log numbers from 5 to 1.
+
+// var i = 5;
+// do {
+//     console.log(i); 
+//     i--;
+// } while (i>0);
+
 // 6. create a for loop that calculates the factorial of 5.
+
+// var sum = 1;
+// for(let i = 1; i <= 5; i++) {
+//     sum*=i;
+// }
+// console.log(sum);
+
 // 7. use for loop to reverse an array [1, 2, 3, 4].
+
+// var a = [1, 2, 3, 4];
+
+// for(let i = a.length - 1; i >= 0; i--) {
+//     console.log(a[i]);
+// }
+
 // 8. write a nested loop to print an 3 * 3 grid of numbers.
+
+// let num = 1;
+// for(let i = 1; i <= 3; i++) {
+//     let row = "";
+//     for(let j = 1; j <= 3; j++) {
+//        row += num + " ";
+//        num++; 
+//     }
+//     console.log(row);
+// }
+
 // 9. write a while loop that logs numbers from 1 to 100 divisible by 5.
+
+// var a = 1;
+
+// while(a <= 100) {
+//     if(a%5==0) {
+//         console.log(a);
+//     }
+//     a++;
+// }
+
 // 10. use a for...in loop tp iterate over an oobject and log its keys.
+
+var a = {
+    name: "himanshu",
+    age: 21,
+    college: "vaish college of engineering",
+    indian: true,
+}
+
+for (const key in a) {
+    console.log(`${key} -> ${a[key]}`);
+    
+}
