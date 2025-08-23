@@ -59,12 +59,54 @@
 // -------------------  variable and datatypes ---------------------
 
 // 1. diplay a varialble using let and log its value
+
+// let a = 10;
+// console.log(typeof a); // number
+
 // 2. creare a const pi and log
+
+// const pi = 3.14;
+// console.log(pi);
+
 // 3. reassign a value to a variable declared with let and log the result
-// 4. check the type of null and its object.
+
+// let a = 10;
+// a = 12;
+// console.log(a);
+
+// 4. check the type of null and log it.
+
+// console.log(typeof null); // object
+
 // 5. create a variable with a no. as a string "20" and check its type.
+
+// var a = "20";
+// console.log(typeof a); // string
+
 // 6. use type of and check the type of boolean
+
+// console.log(typeof Boolean); // function
+
 // 7. create three variable of types string, number, and boolean and log their values.
+
+// var a = "hello";
+// var b = 12;
+// var c = false;
+
+// console.log(a, b, c);
+
 // 8. declare a variable without assigning a value and log its type. 
+
+// let a;
+// console.log(a); // undefined 
+
+
 // 9. create a variable with undefined and log its type.
+
+// let a = undefined;
+// console.log(typeof a); // undefined
+
 // 10. use const to create an array. try reassigning the array and observe.
+
+// const a = [1, 2, 3];
+// a = [2, 3, 4]; // error - assignment to constant variable
