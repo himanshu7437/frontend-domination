@@ -1459,3 +1459,88 @@ getUser(function(user) {
 * But too many callbacks → messy → solved by Promises/async-await.
 
 ---
+---
+
+# ✅ Ques - 19) How JavaScript Handles Asynchronous Code
+
+### 🔹 Key Point:
+
+JavaScript is **single-threaded** (it can run one thing at a time).
+So how does it still handle async tasks like **setTimeout**, **fetch API calls**, or **event listeners**?
+
+👉 The answer: **Event Loop + Web APIs + Callback Queue.**
+
+---
+
+### 🔹 Flow (Simple Explanation)
+
+1. **Call Stack**
+
+   * Where JS runs code line by line.
+   * If a function is called → pushed onto the stack.
+   * When finished → popped off.
+
+2. **Web APIs (Browser features)**
+
+   * Async tasks like `setTimeout`, `fetch`, DOM events are handled by the browser.
+   * Example: `setTimeout` waits in the background (handled by Web API, not blocking JS).
+
+3. **Callback Queue (or Task Queue)**
+
+   * Once async task finishes, its callback is pushed into the **queue**, waiting to run.
+
+4. **Event Loop**
+
+   * Constantly checks: “Is the Call Stack empty?”
+   * If yes → takes a task from the **queue** and pushes it to the Call Stack.
+
+👉 That’s how async code executes *after* synchronous code.
+
+---
+
+### 🔹 Example
+
+```js
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Async Task Done");
+}, 2000);
+
+console.log("End");
+```
+
+**Execution Order:**
+
+1. `Start` → printed immediately.
+2. `setTimeout` registered in Web APIs (2 sec timer).
+3. `End` → printed (stack still free).
+4. After 2 sec, callback `console.log("Async Task Done")` goes to the **queue**, then Event Loop pushes it to stack.
+5. Prints → `Async Task Done`.
+
+**Output:**
+
+```
+Start
+End
+Async Task Done
+```
+
+---
+
+### 🎯 Interview-Ready Answer:
+
+*"JavaScript is single-threaded, but it handles asynchronous code using the event loop.
+When an async operation (like setTimeout, fetch, or DOM event) is encountered, it is delegated to the browser’s Web APIs.
+Once it completes, its callback is added to the callback queue. The event loop continuously checks if the call stack is empty, and if so, moves the callback into the stack for execution.
+This way, async code doesn’t block the main thread."*
+
+---
+
+⚡ Tip: If asked to **draw**, sketch this small diagram:
+
+```
+Code → Call Stack → Web APIs → Callback Queue → Event Loop → Back to Call Stack
+```
+
+---
