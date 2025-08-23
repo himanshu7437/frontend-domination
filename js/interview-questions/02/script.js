@@ -30,11 +30,30 @@
 // a = 12;
 // console.log(a);
 
+// 6. use console.error() to simulate an error message
 
-// 6. use console.error() to simulate an error message 
+// console.error("this is an error message");
+
 // 7. log the sqauare of the number 12 to the console
+
+// var a = 12;
+// console.log(a*a);
+
 // 8. print the type of a variable holding a value true
+
+// var a = true;
+// console.log(typeof a); // boolean
+
 // 9. make a variable holding your age and log whether it id greater than 18.
+
+// var age = 21;
+// if(age>18) {
+//     console.log(age);
+// }
+
 // 10. log the result of 100/0 and observe the output.
+
+// console.log(100/0);
+
 
 // -------------------  variable and datatypes ---------------------
