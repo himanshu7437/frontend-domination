@@ -212,13 +212,81 @@
 // ------------------- Arrays ---------------------
 
 // 1. create an array of your top 5 favourite movies and log it.
-// 2. find and log the second element of an array. 
+
+// var a = ["a", "b", "c", "d", "e"];
+// a.forEach(function(elem) {
+//     console.log(elem);
+    
+// })
+
+// 2. find and log the second element of an array.
+
+// var a = ["a", "b", "c", "d", "e"];
+// console.log(a[1]);
+
 // 3. add two new elements to the start of an array using unshift().
+
+// var nums = [1, 2, 3, 4, 5, 6];
+// nums.unshift(-1);
+// nums.unshift(-2);
+// console.log(nums);
+
 // 4. remove the last element of the array and log the updated arrray.
+
+// var nums = [1, 2, 3, 4, 5, 6];
+// nums.pop();
+// console.log(nums);
+
+
 // 5. use slice to extract the first three element of the array 
+
+// var nums = [1, 2, 3, 4, 5, 6];
+// console.log(nums.splice(0,3));
+
 // 6. find the index of a specific element in a array using .indexof()
+
+// var nums = [1, 2, 3, 4, 5, 6];
+// console.log(nums.indexOf(5));  // 4
+
 // 7. check if a value exists in an array using .includes().
+
+// var nums = [1, 2, 3, 4, 5, 6];
+// console.log(nums.includes(5));  // true
+
 // 8. combine two arrays [1,2] and [3,4] using .concat().
+
+// var a = [1, 2];
+// var b = [3, 4];
+//  console.log(a.concat(b));
+ 
 // 9. sort an array of numbers in [5, 2, 9, 1] in ascending order.
+
+// using bubble sort 
+
+// var a = [8, 2, 9, 1];
+// for(let j = 0; j < a.length - 1; j++) {
+//     for(let i = 0; i < a.length - j - 1; i++) {
+//     if(a[i] > a[i+1]) {
+//         let temp = a[i];
+//         a[i] = a[i+1];
+//         a[i+1] = temp;
+//         }
+//     }
+// }
+
 // 10. write a program that creeates a copy of an araay without mutating the original.
 
+// var a = [1, 3, 5, 2, 5];
+// var b = [...a]; // first mmethod 
+
+
+// var a = [1, 3, 5, 2, 5];
+// var b = [];
+
+// a.forEach(function(elem) { // second method
+//     b.push(elem);
+// })
+
+// console.log(a); 
+
+// ------------------- functions ---------------------
