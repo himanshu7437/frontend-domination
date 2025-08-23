@@ -292,12 +292,105 @@
 // ------------------- functions ---------------------
 
 // 1. write a functions to check if a number is even or odd.
+
+// function checkevenodd(num) {
+//     if(num%2==0){
+//         return "even";
+//     } else {
+//         return "odd";
+//     }
+// }
+
+// console.log(checkevenodd(5)); // odd
+
 // 2. create a functions to calculate the area of a circle with a given radius.
-// 3. write a functions that accepts an array and returns the sum of its elements
+
+// function areacir(num) {
+//     return Math.floor(Math.PI * num * num);
+// }
+
+// console.log(areacir(7)); // 153
+
+// 3. write a functions that accepts an array and returns the sum of its elements.
+
+// var sum = 0;
+// function sumarr(num) {
+//     num.forEach(function(elem) {
+//         sum = sum + elem;
+//     })
+//     return sum;
+// }
+// console.log(sumarr([1, 2, 3, 4, 5, 6, 7, 8, 8, 7]));
+
+
 // 4. create a functions that checks if a string start with a specific chaaracter.
+
+// function strcheck(str, char) {
+//     return str.toLowerCase().startsWith(char.toLowerCase());
+// }
+
+// console.log(strcheck("hello", "H")); //true
+
 // 5. write a function to find the maximum of two numbers.
+
+// function maxoftwo(a, b) {
+//     if(a < b){
+//         return b;
+//     } else if( a > b) {
+//         return a;
+//     } else {
+//         return "equal";
+//     }
+// } 
+
+// console.log(maxoftwo(1, 1)); // equal
+
 // 6. create a function that takes a number and reeturn its factorial.
+
+// function facto(num) {
+//     var fact = 1;
+//     for(let i = 1; i <= num; i++ ) {
+//         fact= fact*i;
+//     }
+//     return fact;
+// }
+// console.log(facto(4)); // 24
+
 // 7. write a function that accepts a string and returns its reverse.
+
+// function revstr(str) {
+//     return str.split("").reverse().join("");
+// }
+// console.log(revstr("himanshu"));
+
 // 8. create a functions to find the largest number in an array.
+
+// function largnum(arr) {
+//     var max = 0;
+//     for(let i = 0; i < arr.length - 1; i++) {
+//         if(arr[i] > max) {
+//             max = arr[i];
+//         }
+//     }
+//     return max;
+// }
+// console.log(largnum([1, 4, 2, 6, 399, 88]));
+
 // 9. write a function that converts a string to kebab-case eg. "Hello World" - hello-world
+
+// function kebabcase(str) {
+//     // return str.replaceAll(" ", "-");
+//     return str.split(" ").join("-");
+// }
+// console.log(kebabcase("hii i am himanshu."));
+
 // 10. create a function that logs: "hello world!!" everytime it is called.
+
+// function hello() {
+//     console.log("hello! World");
+// }
+
+// hello();
+// hello();
+
+// ------------------- END ---------------------
