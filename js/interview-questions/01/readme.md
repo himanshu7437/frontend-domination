@@ -1544,3 +1544,79 @@ Code → Call Stack → Web APIs → Callback Queue → Event Loop → Back to C
 ```
 
 ---
+---
+
+# ✅ Ques - 20) Regular Functions vs Arrow Functions in JavaScript
+
+### 🔹 1. **Syntax**
+
+* **Regular function**
+
+```js
+function add(a, b) {
+  return a + b;
+}
+```
+
+* **Arrow function**
+
+```js
+const add = (a, b) => a + b;
+```
+
+---
+
+### 🔹 2. **`this` keyword**
+
+* **Regular function** → `this` depends on how the function is **called**.
+* **Arrow function** → `this` is **lexically bound** (it takes `this` from where it was defined, not how it’s called).
+
+👉 Example:
+
+```js
+const obj = {
+  name: "Rahul",
+  regular: function () {
+    console.log(this.name);
+  },
+  arrow: () => {
+    console.log(this.name);
+  }
+};
+
+obj.regular(); // "Rahul" (works, because 'this' refers to obj)
+obj.arrow();   // undefined (arrow takes 'this' from outer scope, not obj)
+```
+
+---
+
+### 🔹 3. **Arguments object**
+
+* **Regular function** → has its own `arguments` object.
+* **Arrow function** → doesn’t have `arguments`, you use rest parameters (`...args`) instead.
+
+```js
+function regular(a, b) {
+  console.log(arguments); // works
+}
+regular(1, 2);
+
+const arrow = (a, b) => {
+  console.log(arguments); // ❌ error: arguments not defined
+};
+```
+
+---
+
+### 🔹 4. **Usage**
+
+* **Regular functions** are best for methods in objects, constructors, and when you need your own `this`.
+* **Arrow functions** are best for callbacks, shorter syntax, and when you want to inherit `this` from the parent scope.
+
+---
+
+### 🎯 Interview-Ready Answer:
+
+*"Regular functions have their own `this` depending on how they are called, and they have an `arguments` object. Arrow functions, on the other hand, don’t have their own `this` or `arguments`; they use `this` from the surrounding lexical scope. Arrow functions are more concise and mainly used for callbacks, while regular functions are better when we need our own `this`, like in object methods or constructors."*
+
+---
