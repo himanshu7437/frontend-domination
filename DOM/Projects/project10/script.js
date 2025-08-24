@@ -1,26 +1,26 @@
 // question
 // crerate a tabbed surface, on selecting different tab different paragraph show
 
-var p = document.querySelector('p');
-var first = document.querySelector('.first')
-var second = document.querySelector('.second')
-var third = document.querySelector('.third')
-var fourth = document.querySelector('.fourth')
-var fifth = document.querySelector('.fifth')
+var tabs = document.querySelectorAll('.tab');
+var text = document.querySelectorAll('.text');
 
-first.addEventListener('click', function() {
-    p.textContent = 'this is first tab'
-})
-second.addEventListener('click', function() {
-    p.textContent = 'this is second tab'
-})
-third.addEventListener('click', function() {
-    p.textContent = 'this is third tab'
-})
-fourth.addEventListener('click', function() {
-    p.textContent = 'this is fourth tab'
-})
-fifth.addEventListener('click', function() {
-    p.textContent = 'this is fifth tab'
+
+function hideAll() {
+    text.forEach(function(elem) {
+        elem.style.display = "none"        
+    })
+}
+hideAll();
+
+text[0].style.display = "block";
+
+tabs.forEach(function(tab) {
+    tab.addEventListener("click", function() {
+    hideAll();
     
+    var targetClass = tab.classList[1];
+        
+    var targetText = document.querySelector('.text.' + targetClass)
+    targetText.style.display = "block"
+    })
 })
