@@ -9,3 +9,53 @@ html, body {
     width: 100%;
 }
 
+.main {
+    width: 100%;
+    background-color: cornflowerblue;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 100px;
+}
+
+.container input {
+    width: 60%;
+    height: 30px;
+    border-radius: 18px;
+    outline-color: royalblue;
+    border: 1px solid #dadada;
+    font-size: 14px;
+    padding: 15px;
+}
+
+.people {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.people .person {
+    width: fit-content;
+}
+.person .img{
+    height: 90px;
+    width: 90px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.person .img img {
+    height: 100%;
+    width: 100%;
+}
