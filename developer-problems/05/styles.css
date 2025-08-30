@@ -1,0 +1,46 @@
+/* custom tooltip */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+}
+
+.container {
+  height: 20px;
+  width: 100px;
+  background-color: red;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.tooltip {
+  position: absolute;
+  top: -30px;       /* place above the container */
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease, top 0.3s ease;
+  pointer-events: none;
+}
+
+.container:hover {
+  overflow: visible; 
+}
+
+.container:hover .tooltip {
+  opacity: 1;
+  top: -40px;     
+}
