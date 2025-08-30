@@ -1,13 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random User Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      padding: 20px;
+      text-align: center;
+      width: 280px;
+      transition: 0.3s;
+    }
+
+    .card img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+    }
+
+    .card h2 {
+      font-size: 20px;
+      margin: 10px 0 5px;
+      color: #333;
+    }
+
+    .card p {
+      margin: 4px 0;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .btn {
+      margin-top: 15px;
+      background: #4f46e5;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #3730a3;
+    }
+  </style>
 </head>
 <body>
-    
-    <script src="script.js"></script>
+  <div class="card" id="userCard">
+    <img src="" alt="User Image" id="userImg">
+    <h2 id="userName">Loading...</h2>
+    <p id="userEmail"></p>
+    <p id="userLocation"></p>
+    <button class="btn" onclick="loadUser()">🔄 New User</button>
+  </div>
+
+  <script>
+    async function loadUser() {
+      const res = await fetch("https://randomuser.me/api/");
+      const data = await res.json();
+      const user = data.results[0];
+
+      document.getElementById("userImg").src = user.picture.large;
+      document.getElementById("userName").textContent = user.name.first + " " + user.name.last;
+      document.getElementById("userEmail").textContent = user.email;
+      document.getElementById("userLocation").textContent = user.location.city + ", " + user.location.country;
+    }
+    loadUser();
+  </script>
 </body>
 </html>
