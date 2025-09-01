@@ -125,4 +125,53 @@
 // console.log(checkOccur(a));
 
 
+// -------------------------------loops ---------------------------------
+
+// 1. loop an array and add all numbers of it?
+
+// var a = [1, 2, 3, 4];
+// var result = a.reduce(function( acc, num) {
+//     return acc+num;  // return te final updated acc
+// }, 0); // initial value of acc.
+
+// console.log(result);
+
+
+// 2. in an array of numbers and string only add those which are not string?
+
+// var a = [1, 2, 3, "hello", "ho", 67, "j", 8, "f"]
+// var result = a.reduce(function(acc, elem) {
+//     if(typeof elem === "string") {
+//         return acc + 0;
+//     }
+//     else{
+//         return acc + elem;
+//     }
+// })
+
+// console.log(result);
+
+// 3. loop an arrays of object and remove all objects which dont have given value male?
+
+// do later
+
+// -------------------------------Arrays ---------------------------------
+
+// 1. js fn to clone an array?
+
+
+// var a = [1, 2, 3, 4];
+
+// 1st method 
+// var b = [...a];
+// console.log(b); // [1, 2, 3, 4]
+
+// 2nd method
+// var c = []
+// a.forEach(function(elem) {
+//     c.push(elem);
+// })
+// console.log(c); // [1, 2, 3, 4]
+
+
 
