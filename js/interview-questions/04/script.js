@@ -173,5 +173,68 @@
 // })
 // console.log(c); // [1, 2, 3, 4]
 
+// 2. write a js fn which accepts an arguement and return the type?
 
+// function checktype(elem) {
+//     return typeof elem;
+// }
+// console.log(checktype(12));
+// console.log(checktype("hello"));
+// console.log(checktype(true));
+// console.log(checktype({}));
+// console.log(checktype());
+// console.log(checktype(function(){}));
+
+// 3. write a js fn to get the first element of an array passing a paramter "n" return the first 'n' element of the array.
+
+// function printfirst(arr, index = 1) {
+//     if(index < arr.length) {
+//         for(let i = 0; i <= index; i ++) {
+//             console.log(arr[i]);        
+//         }
+//     } else {
+//         console.log("yeh jyada mang liya bro")
+//     }
+// }
+
+// var a = ["hello", "hii", "hmm"];
+// var b = ["o", "i", "h"];
+// printfirst(a, 2);
+// printfirst(b, 2);
+
+// 4. write a js fn to find the most frequent item of an array?
+
+// function mostFreq(arr) {
+//     var result = {}
+//     var highestVal = 0;
+//     var value;
+//     arr.forEach(function(elem) {
+//         if(result.hasOwnProperty(elem)) {
+//             result[elem]++;
+//         } else {
+//             result[elem] = 1;
+//         }
+//     })
+//     for (const key in result) {
+//         if(result[key] > highestVal) {
+//             highestVal = result[key];
+//             value = key;
+//         }
+//     }
+//     return `the most frequent number is ${value} which comes ${highestVal} times`
+// }
+// var a = [1, 2, 3, 4 , 4, 4, 4, 4, 4];
+// console.log(mostFreq(a)); //the most frequent number is 4 which comes 6 times
+
+// 5 write a js program to shuffle an array?
+
+// do later
+
+// 6. write a js program to compute the union of two arrays?
+
+var a = [1, 2, 3, 4, 2];
+var b = [1, 2, 2, 3, 4, 6];
+
+var c = new Set(a.concat(b)); // set contains always unique values
+console.log(c);
 
