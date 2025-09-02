@@ -153,7 +153,43 @@
 
 // 3. loop an arrays of object and remove all objects which dont have given value male?
 
-// do later
+// var arrr = [
+//     {
+//         name: "himanshu",
+//         gender: "male"
+//     },
+//     {
+//         name: "hina",
+//         gender: "female"
+//     },
+//     {
+//         name: "harshita",
+//         gender: "female"
+//     },
+//     {
+//         name: "harley",
+//         gender: "female"
+//     },
+// ]
+
+// var count = 0;
+// arrr.forEach(function(elem){
+//     if(elem.gender !== "male") {
+//         count++;
+//     }
+// })
+
+// for (var i = 0; i < count; i++) {
+//     for(var j = 0; j < arrr.length; j++) {
+//     if(arrr[j].gender !== "male") {
+//         arrr.splice(j, 1); // it skipps the index which remove so to ensure all get deleted we use the outer loop for count times.
+//     }
+// }
+    
+// }
+// console.log(arrr);
+
+
 
 // -------------------------------Arrays ---------------------------------
 
@@ -228,13 +264,28 @@
 
 // 5 write a js program to shuffle an array?
 
-// do later
+// function shufflekaro(arr) {
+//     var indexofarr = arr.length;
+
+//     while(indexofarr > 0) {
+//         indexofarr--;
+//         var swapindex = Math.floor(Math.random()*indexofarr);
+//         var temp = arr[indexofarr];
+//         arr[indexofarr] = arr[swapindex];
+//         arr[swapindex] = temp;
+//     }
+//     return arr;
+// }
+
+// console.log(shufflekaro([1, 3, 5, 6]));
+
+
 
 // 6. write a js program to compute the union of two arrays?
 
-var a = [1, 2, 3, 4, 2];
-var b = [1, 2, 2, 3, 4, 6];
+// var a = [1, 2, 3, 4, 2];
+// var b = [1, 2, 2, 3, 4, 6];
 
-var c = new Set(a.concat(b)); // set contains always unique values
-console.log(c);
+// var c = new Set(a.concat(b)); // set contains always unique values
+// console.log(c);
 
