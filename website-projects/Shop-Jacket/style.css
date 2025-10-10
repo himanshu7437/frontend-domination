@@ -2,9 +2,110 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 html, body  {
     height: 100%;
     width: 100%;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.nav {
+    height: 80px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0px 30px;
+}
+
+.nav h4{
+    font-size: 18px;
+}
+
+.nav h4 i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 8px;
+    font-weight: 100;
+    background-color: black;
+    color: white;
+}
+
+.hero-top {
+    width: 100%;
+    /* background-color: blue; */
+    padding: 30px 80px;
+}
+
+.hero-top h1{
+    font-size: 4vw;
+    font-weight: 500;
+    line-height: 4vw;
+}
+
+.hero-bottom {
+    height: 200px;
+    width: 100%;
+    /* background-color: yellow; */
+    padding: 15px 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero-bottom p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+.hero-bottom .right {
+    width: 20%;
+    margin-top: 30px;
+}
+
+.hero-bottom .right .elem {
+    /* background-color: blueviolet; */
+    padding: 15px 0px;
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.elem i {
+    font-size: 19px;
+    font-weight: 500;
+    opacity: 0;
+}
+
+.elem:hover i{
+    opacity: 1;
+}
+
+.hero-bottom .right .elem a {
+    text-decoration: none;
+    color: black;
+}
+
+.hero-footer {
+    height: 28%;
+    background-color: brown;
+    overflow: hidden;
+}
+
+.hero-footer img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
 }
