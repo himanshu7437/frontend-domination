@@ -99,6 +99,7 @@ html, body  {
 
 .hero-footer {
     height: 28%;
+    width: 100%;
     background-color: brown;
     overflow: hidden;
 }
@@ -107,5 +108,5 @@ html, body  {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: top;
+    object-position: 0 10%;
 }
