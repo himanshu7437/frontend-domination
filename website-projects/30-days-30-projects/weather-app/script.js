@@ -9,7 +9,7 @@ let weathercity = "New Delhi"
 
 async function apicall(param) {
     try {
-        // let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${param}&appid={apikey}`);
+        let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${param}&appid=4b89e60279096d88a4fe22fede99a150`);
         let data = await response.json();
         temper.textContent = `${Math.floor(data.main.temp - 273.15)}°C)`;
         humidity.textContent = `${data.main.humidity}%`;
