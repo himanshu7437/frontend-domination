@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 html, body {
@@ -12,20 +13,116 @@ html, body {
 .main {
     height: 100vh;
     width: 100vw;
-    background-color: black;
+    background-color: #333;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .card {
-    height: 600px;
+    height: 500px;
     width: 450px;
     border-radius: 20px;
-    padding: 10px 20px;
+    padding: 30px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: aqua;
-    border: 1px solid white;
+    background: linear-gradient(to  right bottom, rgb(48, 254, 216), rgb(197, 51, 250));
+    border: 2px solid rgb(255, 255, 255);
+    scale: 1;
+    transition: all ease-out .5s;
+}
+
+.card:hover {
+    scale: 1.01;
+}
+
+.card h1 {
+    font-size: 23px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.input-area {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-area input{
+    width: 310px;
+    font-size: 15px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    padding: 15px 20px;
+}
+
+.input-area button{
+    /* background: red; */
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: none;
+}
+
+.input-area button i {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.input-area button:hover i{
+    font-size: 20px;
+}
+
+.bottom {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-direction: column;
+}
+
+.bottom img {
+    height: 90px;
+    width: 90px;
+    object-fit: cover;
+    margin-top: 50px;
+}
+
+.bottom i {
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+}
+
+.city-details{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.city-details h1 {
+    font-size: 40px;
+}
+
+.otherdets {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.humidity {
+    display: flex;
+    gap: 15px;
+}
+
+.wind-speed {
+    display: flex;
+    gap: 13px;
 }
