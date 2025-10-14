@@ -3,4 +3,4 @@ here we are going to make a weather website to show case the weather info by sea
 
 screenshot-
 
-![Alt text](./weather-app/ss.png)
+![Alt text](./ss.png)
