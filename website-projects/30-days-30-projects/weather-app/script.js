@@ -5,37 +5,71 @@ let city = document.querySelector('#cityy');
 let inputtbtn = document.querySelector('.input-area button');
 let inputt = document.querySelector('.input-area input');
 let weatherimg = document.querySelector('.bottom img');
-
 let weathercity = "New Delhi"
+const IS_DEV = window.location.hostname === "localhost";
 
-function getwethericon(weatherdets) {
-    if(weatherdets == "sunny"){
-        weatherimg.src = "./sunny.png"
-    } else if (weatherdets == "haze") {
-        weatherimg.src = "./haze.png"
-    }
+function getWeatherIcon(iconCode) {
+    const weatherIcons = {
+    "01d": "icons/sun.png",
+    "01n": "icons/moon.png",
+    "02d": "icons/partly-cloudy.png",
+    "02n": "icons/partly-cloudy-night.png",
+    "03d": "icons/cloud.png",
+    "03n": "icons/cloud.png",
+    "04d": "icons/overcast.png",
+    "09d": "icons/rain.png",
+    "10d": "icons/rain.png",
+    "11d": "icons/thunder.png",
+    "13d": "icons/snow.png",
+    "50d": "icons/mist.png"
+    };
+
+    weatherimg.src = weatherIcons[iconCode] || "icons/default.png";
 }
+
+function handleError(err) {
+    if (IS_DEV) console.log(err);
+    notify("Something went wrong. PLease try again!!")
+}
+
+function notify(message, type = "error") {
+  const box = document.createElement("div");
+  box.className = `toast ${type}`;
+  box.textContent = message;
+  document.body.appendChild(box);
+  setTimeout(() => box.remove(), 3000);
+}
+
   
-async function apicall(param) {
+async function apiCall(param) {
     try {
-        // let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${param}&appid={apikey}`);
+        if (!param) {
+        notify("Please enter a valid city name.", "warning");
+        return;
+        }
+
+        let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${param}&appid=${apikey}`);
+        if (!response.ok) throw new Error(`API Error: ${response.status}`);
         let data = await response.json();
-        temper.textContent = `${Math.floor(data.main.temp - 273.15)}°C)`;
+        getWeatherIcon(data.weather[0].icon);
+        temper.textContent = `${Math.floor(data.main.temp - 273.15)}°C`;
         humidity.textContent = `${data.main.humidity}%`;
         windspeed.textContent = `${data.wind.speed} km/hr`;
-        city.textContent = data.name;
-        console.log(data);
-        
+        city.textContent = data.name;    
         
     } catch (error) {
-        console.log(error);
+        handleError(error);
     }
 }
 
 inputtbtn.addEventListener("click", function(){
     weathercity = inputt.value.trim();
-    console.log(weathercity);
-    apicall(weathercity);
+    apiCall(weathercity);
 })
 
-apicall(weathercity);
+inputt.addEventListener("keypress", e => {
+  if (e.key === "Enter") inputtbtn.click();
+});
+
+
+apiCall(weathercity);

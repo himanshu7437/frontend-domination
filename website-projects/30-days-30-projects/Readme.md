@@ -1,2 +1,6 @@
 # weather app
-here we are going to make function weather app to show case the weathwe info bt searching the input city.
+here we are going to make a weather website to show case the weather info by searching the city.
+
+screenshot-
+
+![Alt text](./weather-app/ss.png)
