@@ -1,0 +1,91 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+.container {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.players {
+	background-color: coral;
+	height: 300px;
+	width: 500px;
+	padding: 30px 30px;
+}
+
+.players h1{
+	font-size: 30px;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+.players input {
+	width: 60%;
+	padding: 10px 10px;
+	margin: 10px 0px;
+	outline: none;
+	border-radius: 10px;
+}
+
+#submit {
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+
+.gaming-area {
+	background-color: coral;
+	height: 500px;
+	width: 400px;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.gaming-area h1{
+	font-size: 30px;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+.gaming-area .message {
+	font-size: 15px;
+}
+
+.game-board {
+	display: grid;
+	grid-template-columns: repeat(3, 100px);
+	grid-template-rows: repeat(3, 100px);
+	gap: 5px;
+	margin-top: 20px;
+	justify-content: center;
+}
+
+.game-board .cell {
+	background-color: #fff;
+	height: 100%;
+	width: 100%;
+	font-size: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+#restart {
+	padding: 5px 10px;
+	border-radius: 5px;
+	margin-top: 10px;
+}
